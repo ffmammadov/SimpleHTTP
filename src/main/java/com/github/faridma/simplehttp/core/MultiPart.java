@@ -29,6 +29,7 @@ public class MultiPart {
      * @param connection HTTP connection
      */
     public MultiPart(HttpURLConnection connection) {
+        sb = new StringBuilder();
         boundary = "xX" + System.currentTimeMillis() + "Xx";
         this.connection = connection;
     }
