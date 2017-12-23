@@ -27,7 +27,7 @@ For add dependency to your maven project add the following code to your pom.xml
     </dependencies>
 ```
 
-as check latest version at [this URL](https://github.com/FaridMa/mvn-repo/tree/master/com/github/faridma/SimpleHTTP).
+check latest version at [this URL](https://github.com/FaridMa/mvn-repo/tree/master/com/github/faridma/SimpleHTTP).
 
 ### Download jar 
 
