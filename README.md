@@ -10,7 +10,7 @@ These instructions will help you get the app and use it in your code.
 
 For add dependency to your maven project add the following code to your pom.xml
 
-```
+```xml
 <repositories>
         <repository>
             <id>FaridMa-mvn-repo</id>
@@ -42,7 +42,7 @@ SimpleHTTP is used for basic HTTP operations with java.
 
 ### Send HTTP GET Request
 
-```
+```java
 public class Main {
 
     public static void main(String[] args) throws IOException {
