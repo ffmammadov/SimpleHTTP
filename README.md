@@ -72,3 +72,92 @@ public class Main {
     }
 }
 ```
+
+### Send HTTP POST Request
+
+```java
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        String url = "https://httpbin.org/post";
+        
+        //Get HTTPS connection, when method setted POST, doOutput is setted true;
+        HttpsURLConnection c = HttpConnection.getSecureConnection(url, HttpMethod.POST);
+        
+        //Add needed request headers
+        c.addRequestProperty("Content-Type",  MediaType.APPLICATION_JSON);
+        
+        //Add Basic Authorization Header
+        HttpConnection.addBasicAuthorization(c, "FaridMa", "qwerty");
+        
+        String request = "{\n"
+                + "	\"data\": \"some data\",\n"
+                + "	\"id\": \"1234567890\"\n"
+                + "}";
+        
+        //Sending some JSON to the endpoint
+        HttpConnection.sendPost(c, request);
+        
+        //Get response code 
+        int responseCode = c.getResponseCode();
+        
+        //Get returned response String
+        String response = HttpConnection.getResponse(c, responseCode, StandardCharsets.UTF_8);
+        
+        //Check response code and handle data depending on your app logic
+        switch (responseCode) {
+            case 200:
+                System.out.println(response);
+                break;
+            default:
+                System.out.println("ERROR");
+
+        }
+    }
+}
+```
+### Send HTTP multipart/form-data Request
+
+```java
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        String url = "https://httpbin.org/post";
+
+        //Get HTTPS connection, when method setted POST, doOutput is setted true;
+        HttpsURLConnection c = HttpConnection.getSecureConnection(url, HttpMethod.POST);
+
+        //Create Multipart object to generate  multipart/form-data request
+        MultiPart multiPart = new MultiPart(c);
+        //Init multipart request by adding request Header Content-Type: multipart/form-data
+        multiPart.init();
+        //add field part to the request
+        multiPart.addFieldPart("formPartOne", "some value for part one");
+        //add file part to the request
+        multiPart.addFilePart("formFile", new File(Main.class.getClassLoader().getResource("croco.jpg").getPath()), "image/jpg");
+
+        //Get formed request String
+        String request = multiPart.finish();
+
+        //Sending some JSON to the endpoint
+        HttpConnection.sendPost(c, request);
+
+        //Get response code 
+        int responseCode = c.getResponseCode();
+
+        //Get returned response String
+        String response = HttpConnection.getResponse(c, responseCode, StandardCharsets.UTF_8);
+
+        //Check response code and handle data depending on your app logic
+        switch (responseCode) {
+            case 200:
+                System.out.println(response);
+                break;
+            default:
+                System.out.println("ERROR");
+
+        }
+    }
+
+}
+```
