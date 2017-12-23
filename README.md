@@ -27,13 +27,13 @@ For add dependency to your maven project add the following code to your pom.xml
     </dependencies>
 ```
 
-as check latest version at [this URL] (https://github.com/FaridMa/mvn-repo/tree/master/com/github/faridma/SimpleHTTP).
+as check latest version at [this URL] (https://github.com/FaridMa/mvn-repo/tree/master/com/github/faridma/SimpleHTTP/).
 
 ### Download jar 
 
 .jar can be reached at the following url:
  
-* [https://github.com/faridma/mvn-repo/raw/master/com/github/faridma/SimpleHTTP/1.0.1/SimpleHTTP-1.0.1.jar] (https://github.com/faridma/mvn-repo/raw/master/com/github/faridma/SimpleHTTP/1.0.1/SimpleHTTP-1.0.1.jar)
+* [https://github.com/faridma/mvn-repo/raw/master/com/github/faridma/SimpleHTTP/1.0.1/SimpleHTTP-1.0.1.jar] (https://github.com/faridma/mvn-repo/raw/master/com/github/faridma/SimpleHTTP/1.0.1/SimpleHTTP-1.0.1.jar/)
 where 1.0.1 is spesific version;
 
 ## Usage
