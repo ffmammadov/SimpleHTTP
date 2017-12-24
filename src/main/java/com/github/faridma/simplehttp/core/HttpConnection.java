@@ -99,13 +99,13 @@ public class HttpConnection {
     /**
      * Converts HTTP response to String
      *
-     * @param c HTTP connection
-     * @param responseCode HTTP response code
+     * @param c HTTP(S) connection
      * @param charset Charset value
      * @return String representation of HTTP response body
      * @throws IOException
      */
-    public static String getResponse(HttpURLConnection c, int responseCode, Charset charset) throws IOException {
+    public static String getResponse(HttpURLConnection c,  Charset charset) throws IOException {
+        int responseCode = c.getResponseCode();
         StringBuilder response = new StringBuilder();
         try (InputStream is = ((responseCode >= 200) && (responseCode <= 299)) ? c.getInputStream() : c.getErrorStream();
                 InputStreamReader isr = new InputStreamReader(is, charset);
