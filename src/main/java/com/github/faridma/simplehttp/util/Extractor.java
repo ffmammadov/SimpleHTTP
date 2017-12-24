@@ -29,7 +29,7 @@ public class Extractor {
      * @param f destination file, to save received file
      * @throws IOException 
      */
-    public static void saveFileFromOctetStream(HttpURLConnection c, File f) throws IOException {
+    public static void saveReceivedFile(HttpURLConnection c, File f) throws IOException {
         try (InputStream is = c.getInputStream()) {
             Files.copy(is, f.toPath());
         }
