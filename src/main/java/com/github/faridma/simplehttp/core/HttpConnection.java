@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.SocketAddress;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -40,6 +43,29 @@ public class HttpConnection {
     }
 
     /**
+     * Creates HTTP connection with basic settings. If request method is "POST",
+     * doOutput is true.
+     *
+     * @param connectionURL endpoint URL string
+     * @param method name of HTTP method [GET/POST]
+     * @param proxyHost proxy hostname
+     * @param proxyPort proxy IP address
+     * @return HTTP connection with basic configuration
+     * @throws IOException
+     */
+    public static HttpURLConnection getConnection(String connectionURL, String method, String proxyHost, int proxyPort) throws IOException {
+        URL url = new URL(connectionURL);
+        SocketAddress proxyAddr = new InetSocketAddress(proxyHost, proxyPort);
+        Proxy proxy = new Proxy(Proxy.Type.HTTP, proxyAddr);
+        HttpURLConnection c = (HttpURLConnection) url.openConnection(proxy);
+        c.setRequestMethod(method);
+        if (method.equals(HttpMethod.POST)) {
+            c.setDoOutput(true);
+        }
+        return c;
+    }
+
+    /**
      * Creates HTTPS connection with basic settings. If request method is
      * "POST", doOutput is true.
      *
@@ -51,6 +77,29 @@ public class HttpConnection {
     public static HttpsURLConnection getSecureConnection(String connectionURL, String method) throws IOException {
         URL url = new URL(connectionURL);
         HttpsURLConnection c = (HttpsURLConnection) url.openConnection();
+        c.setRequestMethod(method);
+        if (method.equals(HttpMethod.POST)) {
+            c.setDoOutput(true);
+        }
+        return c;
+    }
+
+    /**
+     * Creates HTTPS connection with basic settings. If request method is
+     * "POST", doOutput is true.
+     *
+     * @param connectionURL endpoint URL string
+     * @param method name of HTTP method [GET/POST]
+     * @param proxyHost proxy hostname
+     * @param proxyPort proxy IP address
+     * @return HTTPS connection with basic configuration
+     * @throws IOException
+     */
+    public static HttpsURLConnection getSecureConnection(String connectionURL, String method, String proxyHost, int proxyPort) throws IOException {
+        URL url = new URL(connectionURL);
+        SocketAddress proxyAddr = new InetSocketAddress(proxyHost, proxyPort);
+        Proxy proxy = new Proxy(Proxy.Type.HTTP, proxyAddr);
+        HttpsURLConnection c = (HttpsURLConnection) url.openConnection(proxy);
         c.setRequestMethod(method);
         if (method.equals(HttpMethod.POST)) {
             c.setDoOutput(true);
@@ -104,7 +153,7 @@ public class HttpConnection {
      * @return String representation of HTTP response body
      * @throws IOException
      */
-    public static String getResponse(HttpURLConnection c,  Charset charset) throws IOException {
+    public static String getResponse(HttpURLConnection c, Charset charset) throws IOException {
         int responseCode = c.getResponseCode();
         StringBuilder response = new StringBuilder();
         try (InputStream is = ((responseCode >= 200) && (responseCode <= 299)) ? c.getInputStream() : c.getErrorStream();
@@ -115,6 +164,5 @@ public class HttpConnection {
         c.disconnect();
         return response.toString();
     }
-
 
 }
