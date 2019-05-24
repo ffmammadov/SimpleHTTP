@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'jacoco'
 }
 
 group = 'com.github.ffmamamdov'
@@ -29,3 +30,12 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport

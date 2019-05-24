@@ -1,6 +1,7 @@
 # SimpleHTTP
 
-[![CircleCI](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master.svg?style=svg)](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master)
+[![CircleCI](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master.svg?style=svg)](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master) 
+[![codecov](https://codecov.io/gh/ffmammadov/SimpleHTTP/branch/master/graph/badge.svg)](https://codecov.io/gh/ffmammadov/SimpleHTTP)
 
 SimpleHTTP provides you most commonly used HTTP actions. You can open connection, send GET/POST request, get response as String. 
 
