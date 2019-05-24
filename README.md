@@ -2,6 +2,9 @@
 
 [![CircleCI](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master.svg?style=svg)](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master) 
 [![codecov](https://codecov.io/gh/ffmammadov/SimpleHTTP/branch/master/graph/badge.svg)](https://codecov.io/gh/ffmammadov/SimpleHTTP)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ffmammadov_SimpleHTTP&metric=alert_status)](https://sonarcloud.io/dashboard?id=ffmammadov_SimpleHTTP)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ffmammadov_SimpleHTTP&metric=code_smells)](https://sonarcloud.io/dashboard?id=ffmammadov_SimpleHTTP)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ffmammadov_SimpleHTTP&metric=bugs)](https://sonarcloud.io/dashboard?id=ffmammadov_SimpleHTTP)
 
 SimpleHTTP provides you most commonly used HTTP actions. You can open connection, send GET/POST request, get response as String. 
 

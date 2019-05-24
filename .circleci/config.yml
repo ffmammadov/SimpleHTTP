@@ -38,6 +38,17 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      # run tests!
-      - run: gradle build
-      - run: bash <(curl -s https://codecov.io/bash)
+      - run:
+          name: Build
+          command: gradle build
+      - run:
+          name: send test results to codecov
+          command: bash <(curl -s https://codecov.io/bash)
+      - run:
+          name: Send to Sonar
+          command: |
+            gradle sonarqube \
+              -Dsonar.projectKey=ffmammadov_SimpleHTTP \
+              -Dsonar.organization=ffmammadov-github \
+              -Dsonar.host.url=https://sonarcloud.io \
+              -Dsonar.login=47b2f43b9a40d76a9cc2ccce8cdc6c670341fd54
