@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id 'groovy'
+    id 'org.sonarqube' version '2.7'
 }
 
 group = 'com.github.ffmamamdov'
