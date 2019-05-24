@@ -1,4 +1,4 @@
-package com.github.faridma.simplehttp.util;
+package com.github.ffmammadov.simplehttp.util;
 
 import java.io.BufferedReader;
 import java.io.File;

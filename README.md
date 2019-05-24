@@ -1,5 +1,7 @@
 # SimpleHTTP
 
+[![CircleCI](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master.svg?style=svg)](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master)
+
 SimpleHTTP provides you most commonly used HTTP actions. You can open connection, send GET/POST request, get response as String. 
 
 ## Getting Started 
@@ -11,30 +13,30 @@ These instructions will help you get the app and use it in your code.
 For add dependency to your maven project add the following code to your pom.xml
 
 ```xml
-<repositories>
+    <repositories>
         <repository>
-            <id>FaridMa-mvn-repo</id>
+            <id>ffmammadov-mvn-repo</id>
             <name>Project common</name>
-            <url>https://github.com/faridma/mvn-repo/raw/master</url>
+            <url>https://github.com/ffmammadov/mvn-repo/raw/master</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>com.github.faridma</groupId>
+            <groupId>com.github.ffmammadov</groupId>
             <artifactId>SimpleHTTP</artifactId>
-            <version>1.0.1</version>
+            <version>2.0.0</version>
         </dependency>
     </dependencies>
 ```
 
-check latest version at [this URL](https://github.com/FaridMa/mvn-repo/tree/master/com/github/faridma/SimpleHTTP).
+check latest version at [this URL](https://github.com/FaridMa/mvn-repo/tree/master/com/github/ffmammadov/SimpleHTTP).
 
 ### Download jar 
 
 .jar can be reached at the following url:
  
-* [https://github.com/faridma/mvn-repo/raw/master/com/github/faridma/SimpleHTTP/1.0.1/SimpleHTTP-1.0.1.jar](https://github.com/faridma/mvn-repo/raw/master/com/github/faridma/SimpleHTTP/1.0.1/SimpleHTTP-1.0.1.jar)
-where 1.0.1 is spesific version;
+* [https://github.com/faridma/mvn-repo/raw/master/com/github/ffmammadov/SimpleHTTP/2.0.0/SimpleHTTP-2.0.0.jar](https://github.com/faridma/mvn-repo/raw/master/com/github/ffmammadov/SimpleHTTP/2.0.0/SimpleHTTP-2.0.0.jar)
+where 2.0.0 is specific version;
 
 ## Usage
 

@@ -1,4 +1,4 @@
-package com.github.faridma.simplehttp;
+package com.github.ffmammadov.simplehttp;
 
 /**
  *
