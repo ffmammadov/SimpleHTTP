@@ -2,7 +2,18 @@ plugins {
     id 'java-library'
 }
 
+group = 'com.github.ffmamamdov'
 version = '2.0.0'
+sourceCompatibility = 7
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+}
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.allJava

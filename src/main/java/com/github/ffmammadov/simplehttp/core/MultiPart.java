@@ -1,7 +1,8 @@
-package com.github.faridma.simplehttp.core;
+package com.github.ffmammadov.simplehttp.core;
 
-import com.github.faridma.simplehttp.MediaType;
-import com.github.faridma.simplehttp.util.Extractor;
+import com.github.ffmammadov.simplehttp.MediaType;
+import com.github.ffmammadov.simplehttp.util.Extractor;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
