@@ -21,6 +21,7 @@ import javax.xml.bind.DatatypeConverter;
 /**
  * @author Farid F. Mammadov
  */
+@Deprecated
 public class HttpConnection {
 
     /**
