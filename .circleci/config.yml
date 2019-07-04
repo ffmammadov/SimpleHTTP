@@ -7,7 +7,15 @@ jobs:
     working_directory: ~/SimpleHTTP
 
     steps:
-      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "f5:fb:03:ab:85:8a:be:b9:a0:72:58:cb:32:7c:d0:f1"
+      - run:
+          name: clone shellscripts
+          command: git clone git@github.com:ffmammadov/shellscripts.git
+      - run:
+          name: clone repo
+          command: git clone git@github.com:ffmammadov/SimpleHTTP.git && cd SimpleHTTP
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
