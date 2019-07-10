@@ -1,6 +1,7 @@
 # SimpleHTTP
 
 [![CircleCI](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master.svg?style=svg)](https://circleci.com/gh/ffmammadov/SimpleHTTP/tree/master) 
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffmammadov/SimpleHTTP)](https://dependabot.com)
 [![codecov](https://codecov.io/gh/ffmammadov/SimpleHTTP/branch/master/graph/badge.svg)](https://codecov.io/gh/ffmammadov/SimpleHTTP)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ffmammadov_SimpleHTTP&metric=alert_status)](https://sonarcloud.io/dashboard?id=ffmammadov_SimpleHTTP)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ffmammadov_SimpleHTTP&metric=code_smells)](https://sonarcloud.io/dashboard?id=ffmammadov_SimpleHTTP)
